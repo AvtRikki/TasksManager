@@ -39,7 +39,7 @@ const Sidebar = () => {
           </li>;
         })}
       </ul>
-      <button></button>
+      <button className='signin-button'></button>
     </SidebarStyled>
   )
 }
@@ -197,6 +197,10 @@ const SidebarStyled = styled.nav`
     &::before {
       width: 0.3rem;
     }
+  }
+
+  > .signin-button {
+    margin: 1.5rem;
   }
 `;
 
