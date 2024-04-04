@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  const {userid} = auth();
+  const { userId } = auth();
 
   return (
     <ClerkProvider>
@@ -36,7 +36,7 @@ export default function RootLayout({
         <body className={inter.className}>
           <ContextProvider>
             <GlobalStylesProvider>
-              {userid && <Sidebar/>}
+               {userId && <Sidebar />}
               <div className="w-full">{children}</div>
             </GlobalStylesProvider>
           </ContextProvider>
