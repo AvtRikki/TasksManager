@@ -34,7 +34,13 @@ export const GlobalProvider = ({ children }) => {
         setIsLoading(true);
         try {
             const result = await axios.get("/api/tasks");
-            setTasks(result.data);
+            const sorted = res.data.sort((a, b) => {
+              return (
+                new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+              );
+            });
+
+            setTasks(sorted);
         } catch (error) {
             console.log(error.message);
             toast.error("Something went wrong");
@@ -55,7 +61,7 @@ export const GlobalProvider = ({ children }) => {
         }
       };
 
-      const updateTask = async (task) => {
+    const updateTask = async (task) => {
         try {
           const res = await axios.put(`/api/tasks`, task);
     

@@ -61,13 +61,28 @@ export async function GET(req: Request) {
         return NextResponse.json(tasks);
     } catch (error) {
         console.log("Error getting Tasks: ", error);
-    return NextResponse.json({ error: "Error getting task", status: 500 });
+        return NextResponse.json({ error: "Error getting task", status: 500 });
     }
 }
 
 export async function PUT(req: Request) { 
     try { 
+        const { userId } = auth();
+        const { isCompleted, id } = await req.json();
+    
+        if (!userId)
+            return NextResponse.json({ error: "Unauthorized", status: 401 });
 
+        const task = await prisma.task.update({
+            where: {
+                id,
+            },
+            data: {
+                isCompleted,
+            }
+        });
+
+        return NextResponse.json(task);
     } catch (error) {
         console.log("Error updating Task: ", error);
         return NextResponse.json({ error: "Error updating task", status: 500 });
