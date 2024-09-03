@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Tasks Manager
+
+**Tasks Manager** is a web application built using Next.js, TypeScript, and Tailwind CSS. It provides a simple and efficient way to manage and track tasks.
+
+## Project Structure
+
+- **app/**: Contains the core application files, including pages and components.
+- **public/**: Houses static assets such as images and icons.
+- **prisma/**: Manages database schemas and migrations using Prisma ORM.
+- **styles/**: Tailwind CSS configuration and custom styles.
+- **.env**: Environment variables for configuration.
+- **middleware.ts**: Middleware for handling requests.
 
 ## Getting Started
 
-First, run the development server:
+To run this project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ensure you have the following installed:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [Node.js](https://nodejs.org/)
+- [Prisma](https://www.prisma.io/)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Installation
 
-## Learn More
+1. **Clone the Repository**:
+   ```bash
+   git clone git@github.com:AvtRikki/TasksManager.git
+   ```
+2. **Navigate to the Project Directory**:
+   ```bash
+   cd TasksManager
+   ```
+3. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+### Running the Project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Apply Migrations and Update Database**:
+   ```bash
+   npx prisma migrate dev
+   ```
+2. **Start the Development Server**:
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The application will be hosted on `http://localhost:3000/`.
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Please fork this repository and submit pull requests for any improvements or bug fixes.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
